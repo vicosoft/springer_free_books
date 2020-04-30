@@ -1,11 +1,11 @@
-## Python script to download all Springer books released for free during the 2020 COVID-19 quarantine
+## Script en Python para la descarga de los libros de Springer publicados de manera gratuita durante la cuarentena del COVID-19 de 2020
 
 ### Usage
 **Note**: If you want just one or two specific books, get the excel file [here](https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v4) and manually download those or use the script to help you download (see **Download book selectively** sub-section). It took about 4 hours to complete the 409 english books (14 GB, both PDF and EPUB) on my machine.
 
-By default the script stores the books in `./downloads` subfolder according to the subject ("English Package Name" column of the excel file).
+Por defecto el script almacena los libros en el directorio `./downloads` y en subcarpetas acorde al asunto (ver columna del fichero excel "English Package Name").
 
-#### Download all books (PDF and EPUB)
+#### Descarga de todos los libros (Formatos: PDF y EPUB)
 Use the following command to download all PDF and EPUB books to the default download folder `./downloads`
 ```bash
 python3 main.py
@@ -19,7 +19,7 @@ You can download to an absolute path, say `C:/ebooks/springer/`
 python3 main.py -f C:/ebooks/springer/
 ```
 
-#### Download all books of specific format
+#### Descarga de todos los libros en un formato especifico
 To download all PDF books only, run
 ```bash
 python3 main.py --pdf
@@ -29,20 +29,20 @@ or all EPUB books only
 python3 main.py --epub
 ```
 
-#### Download only specific book categories
+#### Descarga de una categoria de libros
 You can download selective books by categories. Make sure category name with space(s) is enclosed in double quotation marks,  like so
 ```bash
 python3 main.py -c Enginnering "CoMpuTer sciEnCe"
 ```
 The category name is case-insensitive.
 
-#### Download book selectively
+#### Descarga de una selección de libros
 You can download books by indices (refer to the excel file for the titles)
 ```bash
 python3 main.py -i 2 345 70 90 0 213
 ```
 
-#### Verbose mode
+#### Modo Verbose
 If you need to know what you are downloading, enable the verbose mode with `-v` option
 ```bash
 python3 main.py -v -c "Behavioral science and psychology" "chaos AD" UFO "Life science" -i 2 34 400
@@ -71,7 +71,7 @@ The following invalid book categories will be ignored:
  3. Life science
 ```
 
-### Running in a virtual environment:
+### Ejecución en un entorno virtual:
 
 ```bash
 python3 -m venv .venv
